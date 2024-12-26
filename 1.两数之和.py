@@ -19,6 +19,25 @@ class Solution:
                 return [dictele[need],i]
             dictele[nums[i]] = i
         return []
+    def twoSumDup(self, nums: List[int], target: int) -> List[int]:
+        nums.sort()
+        left,right = 0, len(nums)-1
+        res = []
+        while left < right:
+            sum = nums[left] + nums[right]
+            l = nums[left]
+            r = nums[right]
+            if sum > target:
+                right -= 1
+            elif sum < target:
+                left += 1
+            else:
+                res.append([nums[left],nums[right]])
+                while left < right and nums[left] == l:
+                    left += 1
+                while left < right and nums[right] == r:
+                    right -= 1
+        return res
 # @lc code=end
 
 

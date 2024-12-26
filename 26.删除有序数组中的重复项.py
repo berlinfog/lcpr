@@ -23,6 +23,16 @@ class Solution:
             fast += 1
         return slow + 1 
 # @lc code=end
+def removeElement(nums: List[int], val: int) -> int:
+    slow = 0
+    fast = 0
+    while fast < len(nums):
+        if nums[fast] != val:
+            nums[slow] = nums[fast]
+            slow += 1
+        fast += 1
+
+# https://labuladong.online/algo/essential-technique/array-two-pointers-summary-2/#%E5%9B%9E%E6%96%87%E4%B8%B2%E5%88%A4%E6%96%AD
 
 
 
